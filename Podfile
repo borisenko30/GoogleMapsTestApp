@@ -6,7 +6,7 @@ target 'GoogleMapsTestApp' do
   use_frameworks!
 
   # Pods for GoogleMapsTestApp
-    pod 'FBSDKCoreKit'
+    pod 'FBSDKCoreKit'    
     pod 'FBSDKLoginKit'
 
 end
