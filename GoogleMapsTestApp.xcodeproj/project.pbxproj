@@ -8,18 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		1175788620863031004CBB5D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1175788520863031004CBB5D /* AppDelegate.swift */; };
-		1175788820863031004CBB5D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1175788720863031004CBB5D /* ViewController.swift */; };
+		1175788820863031004CBB5D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1175788720863031004CBB5D /* MainViewController.swift */; };
 		1175788B20863031004CBB5D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1175788920863031004CBB5D /* Main.storyboard */; };
 		1175788D20863031004CBB5D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1175788C20863031004CBB5D /* Assets.xcassets */; };
 		1175789020863031004CBB5D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1175788E20863031004CBB5D /* LaunchScreen.storyboard */; };
 		11817C53208721D300C4626A /* FacebookProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11817C52208721D300C4626A /* FacebookProvider.swift */; };
+		11817C5B2087303F00C4626A /* GoogleMapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11817C592087303F00C4626A /* GoogleMapsViewController.swift */; };
+		11817C5C2087303F00C4626A /* GoogleMapsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11817C5A2087303F00C4626A /* GoogleMapsViewController.xib */; };
 		371558D68DB02C8D98352874 /* Pods_GoogleMapsTestApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3AACB86C0B947630D8A04E7 /* Pods_GoogleMapsTestApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1175788220863031004CBB5D /* GoogleMapsTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoogleMapsTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1175788520863031004CBB5D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1175788720863031004CBB5D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1175788720863031004CBB5D /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		1175788A20863031004CBB5D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1175788C20863031004CBB5D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1175788F20863031004CBB5D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -27,6 +29,8 @@
 		117578982086441B004CBB5D /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1175789A20864420004CBB5D /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		11817C52208721D300C4626A /* FacebookProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookProvider.swift; sourceTree = "<group>"; };
+		11817C592087303F00C4626A /* GoogleMapsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapsViewController.swift; sourceTree = "<group>"; };
+		11817C5A2087303F00C4626A /* GoogleMapsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GoogleMapsViewController.xib; sourceTree = "<group>"; };
 		51AB13F315458390F3DE0DAF /* Pods-GoogleMapsTestApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoogleMapsTestApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GoogleMapsTestApp/Pods-GoogleMapsTestApp.debug.xcconfig"; sourceTree = "<group>"; };
 		6F7DC55D143686C6FDE1D300 /* Pods-GoogleMapsTestApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoogleMapsTestApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-GoogleMapsTestApp/Pods-GoogleMapsTestApp.release.xcconfig"; sourceTree = "<group>"; };
 		A3AACB86C0B947630D8A04E7 /* Pods_GoogleMapsTestApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoogleMapsTestApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,6 +51,7 @@
 		1175787920863031004CBB5D = {
 			isa = PBXGroup;
 			children = (
+				11817C5720872E2800C4626A /* Source */,
 				1175788420863031004CBB5D /* GoogleMapsTestApp */,
 				1175788320863031004CBB5D /* Products */,
 				4FAFF5E86485F51684C2461B /* Pods */,
@@ -65,9 +70,7 @@
 		1175788420863031004CBB5D /* GoogleMapsTestApp */ = {
 			isa = PBXGroup;
 			children = (
-				11817C50208721B500C4626A /* Providers */,
 				1175788520863031004CBB5D /* AppDelegate.swift */,
-				1175788720863031004CBB5D /* ViewController.swift */,
 				1175788920863031004CBB5D /* Main.storyboard */,
 				1175788C20863031004CBB5D /* Assets.xcassets */,
 				1175788E20863031004CBB5D /* LaunchScreen.storyboard */,
@@ -90,6 +93,41 @@
 				11817C52208721D300C4626A /* FacebookProvider.swift */,
 			);
 			path = FacebookProvider;
+			sourceTree = "<group>";
+		};
+		11817C5420872D9E00C4626A /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				11817C5820872FEC00C4626A /* GoogleMapsViewController */,
+				11817C5620872DD700C4626A /* MainViewController */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		11817C5620872DD700C4626A /* MainViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1175788720863031004CBB5D /* MainViewController.swift */,
+			);
+			path = MainViewController;
+			sourceTree = "<group>";
+		};
+		11817C5720872E2800C4626A /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				11817C5420872D9E00C4626A /* UI */,
+				11817C50208721B500C4626A /* Providers */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		11817C5820872FEC00C4626A /* GoogleMapsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				11817C592087303F00C4626A /* GoogleMapsViewController.swift */,
+				11817C5A2087303F00C4626A /* GoogleMapsViewController.xib */,
+			);
+			path = GoogleMapsViewController;
 			sourceTree = "<group>";
 		};
 		4FAFF5E86485F51684C2461B /* Pods */ = {
@@ -175,6 +213,7 @@
 			files = (
 				1175789020863031004CBB5D /* LaunchScreen.storyboard in Resources */,
 				1175788D20863031004CBB5D /* Assets.xcassets in Resources */,
+				11817C5C2087303F00C4626A /* GoogleMapsViewController.xib in Resources */,
 				1175788B20863031004CBB5D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -188,9 +227,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-GoogleMapsTestApp/Pods-GoogleMapsTestApp-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -244,8 +286,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1175788820863031004CBB5D /* ViewController.swift in Sources */,
+				1175788820863031004CBB5D /* MainViewController.swift in Sources */,
 				1175788620863031004CBB5D /* AppDelegate.swift in Sources */,
+				11817C5B2087303F00C4626A /* GoogleMapsViewController.swift in Sources */,
 				11817C53208721D300C4626A /* FacebookProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,9 +8,11 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MainViewController: UIViewController {
     
     @IBAction func onLogin(sender: UIButton) {
-        FacebookProvider().login()
+        FacebookProvider().login {
+            self.present(GoogleMapsViewController(), animated: true)
+        }
     }
 }
