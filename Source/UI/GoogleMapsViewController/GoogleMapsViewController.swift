@@ -70,6 +70,8 @@ class GoogleMapsViewController: UIViewController {
     }
 }
 
+// MARK: - GMSMapViewDelegate
+
 extension GoogleMapsViewController: GMSMapViewDelegate {
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
         let position = marker.position
