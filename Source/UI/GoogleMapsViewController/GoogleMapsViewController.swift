@@ -75,6 +75,8 @@ extension GoogleMapsViewController: GMSMapViewDelegate {
         let position = marker.position
         WeatherProvider().fetchWeather(position) { data in
             let weather = Weather(data)
+            
+            self.present(WeatherViewController(weather), animated: true)
         }
         
         return true
