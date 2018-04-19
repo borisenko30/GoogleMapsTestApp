@@ -11,8 +11,6 @@ import GoogleMaps
 
 class GoogleMapsViewController: UIViewController {
     
-    typealias Coordinates = (latitude: CLLocationDegrees, longitude: CLLocationDegrees)
-    
     // MARK: - Lifecycle
 
     override func viewDidLoad() {
@@ -20,10 +18,10 @@ class GoogleMapsViewController: UIViewController {
     }
 
     override func loadView() {
-        let coordinates = self.randomCoordinates()
-        let mapView = self.createMap(coordinates: coordinates)
+        let location = self.randomLocation()
+        let mapView = self.createMap(location: location)
 
-        self.putMarker(on: mapView, coordinates: coordinates)
+        self.putMarker(on: mapView, location: location)
         self.view = mapView
         
         self.view.addSubview(self.randomButton())
@@ -31,17 +29,18 @@ class GoogleMapsViewController: UIViewController {
     
     // MARK: - Private methods
     
-    private func createMap(coordinates: Coordinates) -> GMSMapView {
-        let camera = GMSCameraPosition.camera(withLatitude: coordinates.latitude, longitude: coordinates.longitude, zoom: 6.0)
+    private func createMap(location: CLLocationCoordinate2D) -> GMSMapView {
+        let camera = GMSCameraPosition.camera(withTarget: location, zoom: 6.0)
         let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
         mapView.isMyLocationEnabled = true
+        mapView.delegate = self
         
         return mapView
     }
     
-    private func putMarker(on view: GMSMapView, coordinates: Coordinates) {
+    private func putMarker(on view: GMSMapView, location: CLLocationCoordinate2D) {
         let marker = GMSMarker()
-        marker.position = CLLocationCoordinate2D(latitude: coordinates.latitude, longitude: coordinates.longitude)
+        marker.position = location
         marker.map = view
     }
     
@@ -58,17 +57,28 @@ class GoogleMapsViewController: UIViewController {
     }
     
     @objc private func onRandom() {
-        let coordinates = self.randomCoordinates()
-
         guard let mapView = self.view as? GMSMapView else { return }
+        let location = self.randomLocation()
         
-        let target = CLLocationCoordinate2D(latitude: coordinates.latitude, longitude: coordinates.longitude)
-        mapView.camera = GMSCameraPosition.camera(withTarget: target, zoom: 6)
+        mapView.camera = GMSCameraPosition.camera(withTarget: location, zoom: 6)
         
-        self.putMarker(on: mapView, coordinates: coordinates)
+        self.putMarker(on: mapView, location: location)
     }
     
-    private func randomCoordinates() -> Coordinates {
-        return (.random(min: -90, max: 90), .random(min: -180, max: 180))
+    private func randomLocation() -> CLLocationCoordinate2D {
+        return CLLocationCoordinate2D(latitude: .random(min: -90, max: 90), longitude: .random(min: -180, max: 180))
+    }
+}
+
+extension GoogleMapsViewController: GMSMapViewDelegate {
+    func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
+        let position = marker.position
+        WeatherProvider().fetchWeather(position) { data in
+            let weather = Weather(data)
+            
+            self.present(WeatherViewController(weather), animated: true)
+        }
+        
+        return true
     }
 }

@@ -12,5 +12,6 @@ target 'GoogleMapsTestApp' do
   pod 'FBSDKCoreKit'    
   pod 'FBSDKLoginKit'
   pod 'GoogleMaps'
+  pod 'Alamofire'
 
 end

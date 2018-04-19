@@ -16,6 +16,11 @@
 		11817C5B2087303F00C4626A /* GoogleMapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11817C592087303F00C4626A /* GoogleMapsViewController.swift */; };
 		11817C5C2087303F00C4626A /* GoogleMapsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11817C5A2087303F00C4626A /* GoogleMapsViewController.xib */; };
 		11817C60208731FD00C4626A /* Double+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11817C5F208731FD00C4626A /* Double+Extensions.swift */; };
+		11817C6620875CFE00C4626A /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11817C6520875CFE00C4626A /* Weather.swift */; };
+		11817C6820875D2D00C4626A /* WeatherProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11817C6720875D2D00C4626A /* WeatherProvider.swift */; };
+		11817C6C2088D84B00C4626A /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11817C6A2088D84B00C4626A /* WeatherViewController.swift */; };
+		11817C6D2088D84B00C4626A /* WeatherViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11817C6B2088D84B00C4626A /* WeatherViewController.xib */; };
+		11817C702088D8F600C4626A /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11817C6F2088D8F600C4626A /* WeatherView.swift */; };
 		371558D68DB02C8D98352874 /* Pods_GoogleMapsTestApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3AACB86C0B947630D8A04E7 /* Pods_GoogleMapsTestApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +38,11 @@
 		11817C592087303F00C4626A /* GoogleMapsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapsViewController.swift; sourceTree = "<group>"; };
 		11817C5A2087303F00C4626A /* GoogleMapsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GoogleMapsViewController.xib; sourceTree = "<group>"; };
 		11817C5F208731FD00C4626A /* Double+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extensions.swift"; sourceTree = "<group>"; };
+		11817C6520875CFE00C4626A /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		11817C6720875D2D00C4626A /* WeatherProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherProvider.swift; sourceTree = "<group>"; };
+		11817C6A2088D84B00C4626A /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
+		11817C6B2088D84B00C4626A /* WeatherViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeatherViewController.xib; sourceTree = "<group>"; };
+		11817C6F2088D8F600C4626A /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
 		51AB13F315458390F3DE0DAF /* Pods-GoogleMapsTestApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoogleMapsTestApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GoogleMapsTestApp/Pods-GoogleMapsTestApp.debug.xcconfig"; sourceTree = "<group>"; };
 		6F7DC55D143686C6FDE1D300 /* Pods-GoogleMapsTestApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoogleMapsTestApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-GoogleMapsTestApp/Pods-GoogleMapsTestApp.release.xcconfig"; sourceTree = "<group>"; };
 		A3AACB86C0B947630D8A04E7 /* Pods_GoogleMapsTestApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoogleMapsTestApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -84,6 +94,7 @@
 		11817C50208721B500C4626A /* Providers */ = {
 			isa = PBXGroup;
 			children = (
+				11817C6120875CBB00C4626A /* WeatherProvider */,
 				11817C51208721BF00C4626A /* FacebookProvider */,
 			);
 			path = Providers;
@@ -100,6 +111,7 @@
 		11817C5420872D9E00C4626A /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				11817C692088D82900C4626A /* WeatherViewController */,
 				11817C5820872FEC00C4626A /* GoogleMapsViewController */,
 				11817C5620872DD700C4626A /* MainViewController */,
 			);
@@ -118,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				11817C5D208731BE00C4626A /* Library */,
+				11817C6320875CE000C4626A /* Models */,
 				11817C5420872D9E00C4626A /* UI */,
 				11817C50208721B500C4626A /* Providers */,
 			);
@@ -147,6 +160,48 @@
 				11817C5F208731FD00C4626A /* Double+Extensions.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		11817C6120875CBB00C4626A /* WeatherProvider */ = {
+			isa = PBXGroup;
+			children = (
+				11817C6720875D2D00C4626A /* WeatherProvider.swift */,
+			);
+			path = WeatherProvider;
+			sourceTree = "<group>";
+		};
+		11817C6320875CE000C4626A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				11817C6420875CED00C4626A /* Weather */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		11817C6420875CED00C4626A /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+				11817C6520875CFE00C4626A /* Weather.swift */,
+			);
+			path = Weather;
+			sourceTree = "<group>";
+		};
+		11817C692088D82900C4626A /* WeatherViewController */ = {
+			isa = PBXGroup;
+			children = (
+				11817C6E2088D8DB00C4626A /* view */,
+				11817C6A2088D84B00C4626A /* WeatherViewController.swift */,
+				11817C6B2088D84B00C4626A /* WeatherViewController.xib */,
+			);
+			path = WeatherViewController;
+			sourceTree = "<group>";
+		};
+		11817C6E2088D8DB00C4626A /* view */ = {
+			isa = PBXGroup;
+			children = (
+				11817C6F2088D8F600C4626A /* WeatherView.swift */,
+			);
+			path = view;
 			sourceTree = "<group>";
 		};
 		4FAFF5E86485F51684C2461B /* Pods */ = {
@@ -230,6 +285,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11817C6D2088D84B00C4626A /* WeatherViewController.xib in Resources */,
 				1175789020863031004CBB5D /* LaunchScreen.storyboard in Resources */,
 				1175788D20863031004CBB5D /* Assets.xcassets in Resources */,
 				11817C5C2087303F00C4626A /* GoogleMapsViewController.xib in Resources */,
@@ -283,12 +339,14 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-GoogleMapsTestApp/Pods-GoogleMapsTestApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
@@ -306,9 +364,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				1175788820863031004CBB5D /* MainViewController.swift in Sources */,
+				11817C6820875D2D00C4626A /* WeatherProvider.swift in Sources */,
 				1175788620863031004CBB5D /* AppDelegate.swift in Sources */,
 				11817C5B2087303F00C4626A /* GoogleMapsViewController.swift in Sources */,
 				11817C53208721D300C4626A /* FacebookProvider.swift in Sources */,
+				11817C6C2088D84B00C4626A /* WeatherViewController.swift in Sources */,
+				11817C702088D8F600C4626A /* WeatherView.swift in Sources */,
+				11817C6620875CFE00C4626A /* Weather.swift in Sources */,
 				11817C60208731FD00C4626A /* Double+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
