@@ -16,7 +16,7 @@ class WeatherView: UIView {
     
     func fill(with model: Weather) {
         self.descriptionLabel.text = "Weather description: \(model.description)"
-        self.temperatureLabel.text = "Temperature: \(model.temperature)"
-        self.windSpeedLabel.text = "Wind speed: \(model.windSpeed)"
+        self.temperatureLabel.text = "Temperature: \(model.temperature) K"
+        self.windSpeedLabel.text = "Wind speed: \(model.windSpeed) m/s"
     }
 }

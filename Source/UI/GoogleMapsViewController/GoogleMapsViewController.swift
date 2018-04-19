@@ -74,9 +74,9 @@ extension GoogleMapsViewController: GMSMapViewDelegate {
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
         let position = marker.position
         WeatherProvider().fetchWeather(position) { data in
-            let weather = Weather(data)
-            
-            self.present(WeatherViewController(weather), animated: true)
+            Weather.decode(data).value.map {
+                self.present(WeatherViewController($0), animated: true)
+            }
         }
         
         return true

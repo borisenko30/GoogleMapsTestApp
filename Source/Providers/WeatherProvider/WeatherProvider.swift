@@ -9,13 +9,16 @@
 import Foundation
 import Alamofire
 import GoogleMaps
+import Argo
 
-typealias WeatherCompletion = (WeatherData) -> ()
+typealias WeatherCompletion = (Argo.JSON) -> ()
 
 class WeatherProvider {
     func fetchWeather(_ location: CLLocationCoordinate2D, completion: WeatherCompletion? = nil) {
+        guard let url = URL(string: "https://api.openweathermap.org/data/2.5/weather") else { return }
+        
         Alamofire.request(
-            URL(string: "https://api.openweathermap.org/data/2.5/weather")!,
+            url,
             method: .get,
             parameters: ["lat": location.latitude, "lon": location.longitude, "APPID" : "314bee97e600db3628d19c31cd0d9d76"])
             .validate()
@@ -24,14 +27,14 @@ class WeatherProvider {
                     print("Error while fetching weather data: \(String(describing: response.result.error))")
                     return
                 }
-                
+ 
                 guard let value = response.result.value as? [String: Any] else {
                         print("Malformed data received from openweather service")
                         
                         return
                 }
 
-                completion?(value)
+                completion?(Argo.JSON(value))
             }
     }
 }

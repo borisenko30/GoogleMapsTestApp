@@ -13,5 +13,7 @@ target 'GoogleMapsTestApp' do
   pod 'FBSDKLoginKit'
   pod 'GoogleMaps'
   pod 'Alamofire'
+  pod 'Argo'
+  pod 'Curry'
 
 end
